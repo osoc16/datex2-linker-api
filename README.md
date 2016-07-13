@@ -2,6 +2,9 @@
 
 This is the API used in [datex2-linker](https://github.com/osoc16/datex2-linker).
 
+[![Build Status](https://travis-ci.org/osoc16/datex2-linker-api.svg?branch=master)](https://travis-ci.org/osoc16/datex2-linker-api)
+[![npm version](https://badge.fury.io/js/datex2-linker-api.svg)](https://www.npmjs.com/package/datex2-linker-api)
+
 # Usage
 
 ```js
