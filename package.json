@@ -1,0 +1,26 @@
+{
+  "name": "datex2-linker-api",
+  "version": "0.0.0",
+  "description": "Converting an existing datex2 source to a json-ld accessible page",
+  "main": "index.js",
+  "author": "open Summer of code 2016",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "got": "^6.3.0",
+    "xml2js": "^0.4.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oSoc16/datex2-linker-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oSoc16/datex2-linker-api/issues"
+  },
+  "homepage": "https://github.com/oSoc16/datex2-linker-api#readme",
+  "devDependencies": {
+    "ava": "^0.15.2"
+  },
+  "scripts": {
+    "test": "ava --verbose"
+  }
+}
