@@ -1,6 +1,6 @@
 {
   "name": "datex2-linker-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Converting an existing datex2 source to a json-ld accessible page",
   "main": "index.js",
   "author": "open Summer of code 2016",
