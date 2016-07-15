@@ -39,8 +39,7 @@ function parse(source, baseuri) {
           reject('error while parsing xml.\n ${JSON.stringify(err)}');
         }
 
-        // const data = addLinksToIds(result, baseuri + 'terms');
-        const data = addLinksToIds(result, baseuri + 'data.jsonld');
+        const data = addLinksToIds(result, baseuri);
 
         resolve({
           '@context': context,
