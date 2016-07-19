@@ -12,7 +12,7 @@ test('served xml is converted to json', async t => {
   });
   server.listen('4002');
   const json = JSON.stringify(await parse('http://localhost:4002'));
-  t.is(json, '{"@context":{"@base":"http://vocab.datex.org/terms#"},"@graph":{"string":{"attribute":"value","text":"content"}}}');
+  t.is(json, '{"@context":{"@vocab":"http://vocab.datex.org/terms#"},"@graph":{"string":{"attribute":"value","text":"content"}}}');
 });
 
 test('served xml converts id to @id', async t => {
@@ -24,5 +24,5 @@ test('served xml converts id to @id', async t => {
   });
   server.listen('4003');
   const json = JSON.stringify(await parse('http://localhost:4003', 'http://test.dev/datex/'));
-  t.is(json, '{"@context":{"@base":"http://vocab.datex.org/terms#"},"@graph":{"d2LogicalModel":{"xmlns":"//datex2.eu/schema/2/2_0","modelBaseVersion":"2","@id":"http://test.dev/datex/#azertyuiop"}}}');
+  t.is(json, '{"@context":{"@vocab":"http://vocab.datex.org/terms#"},"@graph":{"d2LogicalModel":{"xmlns":"//datex2.eu/schema/2/2_0","modelBaseVersion":"2","@id":"http://test.dev/datex/#azertyuiop"}}}');
 });
