@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://cdn.rawgit.com/osoc16/datex2-linker-api/master/logo.svg" alt="Datex II linker API" height="70"></h1>
+<h1 align="center"><a href="https://github.com/osoc16/datex2-linker-api"><img src="https://cdn.rawgit.com/osoc16/datex2-linker-api/master/logo.svg" alt="Datex II linker API" height="70"></a></h1>
 
 This is the API used in [datex2-linker](https://github.com/osoc16/datex2-linker).
 
