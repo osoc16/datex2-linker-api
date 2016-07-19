@@ -8,7 +8,7 @@ const xml2js = require('xml2js');
  * @type {Object}
  */
 const context = {
-  '@base': 'http://vocab.datex.org/terms#'
+  '@vocab': 'http://vocab.datex.org/terms#'
 };
 
 /**
