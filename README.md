@@ -1,4 +1,4 @@
-# Datex2 linker API
+<h1 align="center"><img src="logo.svg" alt="Datex II linker API" height="70"></h1>
 
 This is the API used in [datex2-linker](https://github.com/osoc16/datex2-linker).
 
