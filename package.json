@@ -7,6 +7,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "got": "^6.3.0",
+    "jsonld": "^0.4.11",
     "xml2js": "^0.4.16"
   },
   "repository": {
