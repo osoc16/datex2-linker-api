@@ -19,9 +19,13 @@
   },
   "homepage": "https://github.com/oSoc16/datex2-linker-api#readme",
   "devDependencies": {
-    "ava": "^0.15.2"
+    "ava": "^0.15.2",
+    "xo": "^0.16.0"
   },
   "scripts": {
-    "test": "ava --verbose"
+    "test": "xo && ava --verbose"
+  },
+  "xo": {
+    "space": true
   }
 }

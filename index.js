@@ -18,19 +18,16 @@ const context = {
  * @return {Promise}        will return the json-ld once parsing has completed
  */
 function parse(source, baseuri) {
-
   return new Promise((resolve, reject) => {
-
     // get the requested source datafeed
     got(source).then(response => {
-
       // options for parsing the xml
-      parser = new xml2js.Parser({
+      const parser = new xml2js.Parser({
         mergeAttrs: true,
         explicitArray: false,
         tagNameProcessors: [xml2js.processors.stripPrefix],
         attrNameProcessors: [xml2js.processors.stripPrefix],
-        attrValueProcessors: [xml2js.processors.stripPrefix],
+        attrValueProcessors: [xml2js.processors.stripPrefix]
       });
 
       // parse the body of the request as xml to json with options
@@ -45,15 +42,12 @@ function parse(source, baseuri) {
           '@context': context,
           '@graph': data
         });
-
       });
-
     }).catch(err => {
       reject(`error while getting source file.\n ${err}`);
     });
   });
-
-};
+}
 
 /**
  * Change id's into @id with uri
@@ -65,7 +59,7 @@ function addLinksToIds(json, base) {
   function recurse(out) {
     for (let inner in out) {
       // if the current child contains more nesting, we need to continue
-      if (typeof out[inner] == 'object') {
+      if (typeof out[inner] === 'object') {
         recurse(out[inner]);
       }
       // if the current key is `id`, we need to transform it
