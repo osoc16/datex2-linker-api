@@ -1,10 +1,10 @@
-import test from 'ava';
 import http from 'http';
 import * as jsonld from 'jsonld';
+import test from 'ava';
 import parse from './index.js';
 
 test('served xml is converted to json', async t => {
-  const server = http.createServer(function(req, res) {
+  const server = http.createServer((req, res) => {
     res.end(`
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <string someremovednamespace:attribute="value">
@@ -17,7 +17,7 @@ test('served xml is converted to json', async t => {
 });
 
 test('served xml converts id to @id', async t => {
-  const server = http.createServer(function(req, res) {
+  const server = http.createServer((req, res) => {
     res.end(`
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0" modelBaseVersion="2" id="azertyuiop">
@@ -29,7 +29,7 @@ test('served xml converts id to @id', async t => {
 });
 
 test('it\'s possible to flatten the served json', async t => {
-  const server = http.createServer(function(req, res) {
+  const server = http.createServer((req, res) => {
     res.end(`
 <?xml version="1.0" encoding="UTF-8"?>
 <d2LogicaModel xmlns="http://datex2.eu/schema/2/2_0">
