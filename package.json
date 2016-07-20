@@ -26,6 +26,7 @@
     "test": "xo && ava --verbose"
   },
   "xo": {
-    "space": true
+    "space": true,
+    "esnext": true
   }
 }
