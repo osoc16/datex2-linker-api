@@ -57,7 +57,7 @@ function parse(source, baseuri) {
  */
 function addLinksToIds(json, base) {
   function recurse(out) {
-    for (let inner in out) {
+    for (const inner in out) {
       // if the current child contains more nesting, we need to continue
       if (typeof out[inner] === 'object') {
         recurse(out[inner]);
