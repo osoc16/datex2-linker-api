@@ -15,12 +15,13 @@ const context = {
  * Parse a xml datex2 feed into a json-ld feed
  * @param  {string} source  a valid URL that goes to an xml datex2 feed
  * @param  {string} baseuri the baseuri that contains each identifier (as a hash)
+ * @param  {[object]} sourceOptions any of the `http.request` options.
  * @return {Promise}        will return the json-ld once parsing has completed
  */
-function parse(source, baseuri) {
+function parse(source, baseuri, sourceOptions) {
   return new Promise((resolve, reject) => {
     // get the requested source datafeed
-    got(source).then(response => {
+    got(source, sourceOptions).then(response => {
       // options for parsing the xml
       const parser = new xml2js.Parser({
         mergeAttrs: true,
