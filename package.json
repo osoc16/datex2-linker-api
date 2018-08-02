@@ -6,8 +6,7 @@
   "author": "open Summer of code 2016",
   "license": "Apache-2.0",
   "dependencies": {
-    "got": "^6.3.0",
-    "jsonld": "^0.4.11",
+    "got": "^8.3.2",
     "xml2js": "^0.4.16"
   },
   "repository": {
@@ -20,6 +19,7 @@
   "homepage": "https://github.com/oSoc16/datex2-linker-api#readme",
   "devDependencies": {
     "ava": "^0.25.0",
+    "jsonld": "^1.0.2",
     "xo": "^0.21.1"
   },
   "scripts": {
