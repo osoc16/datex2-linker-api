@@ -34,7 +34,7 @@ function parse(source, baseuri, sourceOptions) {
       // parse the body of the request as xml to json with options
       parser.parseString(response.body, (err, result) => {
         if (err) {
-          reject('error while parsing xml.\n ${JSON.stringify(err)}');
+          reject(new Error(`error while parsing xml.\n ${JSON.stringify(err)}`));
         }
 
         const data = addLinksToIds(result, baseuri);
@@ -45,7 +45,7 @@ function parse(source, baseuri, sourceOptions) {
         });
       });
     }).catch(err => {
-      reject(`error while getting source file.\n ${err}`);
+      reject(new Error(`error while getting source file.\n ${err}`));
     });
   });
 }
