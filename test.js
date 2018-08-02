@@ -1,7 +1,7 @@
 import http from 'http';
 import * as jsonld from 'jsonld';
 import test from 'ava';
-import parse from './index.js';
+import parse from '.';
 
 test('served xml is converted to json', async t => {
   const server = http.createServer((req, res) => {
@@ -95,5 +95,5 @@ test('it\'s possible to flatten the served json', async t => {
   server.listen('4004');
 
   const json = await parse('http://localhost:4004', 'http://test.dev/datex/');
-  t.notThrows(jsonld.promises.flatten(json));
+  await t.notThrows(jsonld.promises.flatten(json));
 });

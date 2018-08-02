@@ -2,7 +2,7 @@ const got = require('got');
 const xml2js = require('xml2js');
 
 /**
- * the json-ld context used for all of the terms
+ * The json-ld context used for all of the terms
  * todo: make sure that every possible term is available here
  * report to https://github.com/OpenTransport/linked-datex2
  * @type {Object}
@@ -20,9 +20,9 @@ const context = {
  */
 function parse(source, baseuri, sourceOptions) {
   return new Promise((resolve, reject) => {
-    // get the requested source datafeed
+    // Get the requested source datafeed
     got(source, sourceOptions).then(response => {
-      // options for parsing the xml
+      // Options for parsing the xml
       const parser = new xml2js.Parser({
         mergeAttrs: true,
         explicitArray: false,
@@ -31,7 +31,7 @@ function parse(source, baseuri, sourceOptions) {
         attrValueProcessors: [xml2js.processors.stripPrefix]
       });
 
-      // parse the body of the request as xml to json with options
+      // Parse the body of the request as xml to json with options
       parser.parseString(response.body, (err, result) => {
         if (err) {
           reject(new Error(`error while parsing xml.\n ${JSON.stringify(err)}`));
@@ -59,16 +59,18 @@ function parse(source, baseuri, sourceOptions) {
 function addLinksToIds(json, base) {
   function recurse(out) {
     for (const inner in out) {
-      // if the current child contains more nesting, we need to continue
-      if (typeof out[inner] === 'object') {
-        recurse(out[inner]);
-      }
-      // if the current key is `id`, we need to transform it
-      if (inner === 'id') {
-        // make a new `@id` child that links to this identifier
-        out['@id'] = base + '#' + out[inner];
-        // remove the original `id` child
-        out[inner] = undefined;
+      if (Object.prototype.hasOwnProperty.call(out, inner)) {
+        // If the current child contains more nesting, we need to continue
+        if (typeof out[inner] === 'object') {
+          recurse(out[inner]);
+        }
+        // If the current key is `id`, we need to transform it
+        if (inner === 'id') {
+          // Make a new `@id` child that links to this identifier
+          out['@id'] = base + '#' + out[inner];
+          // Remove the original `id` child
+          out[inner] = undefined;
+        }
       }
     }
   }
