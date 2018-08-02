@@ -25,6 +25,9 @@
   "scripts": {
     "test": "xo && ava --verbose"
   },
+  "engines": {
+    "node": ">= 6"
+  },
   "xo": {
     "space": true,
     "esnext": true
