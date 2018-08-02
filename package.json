@@ -19,7 +19,7 @@
   "homepage": "https://github.com/oSoc16/datex2-linker-api#readme",
   "devDependencies": {
     "ava": "^0.25.0",
-    "jsonld": "^1.0.2",
+    "jsonld": "^0.4.11",
     "xo": "^0.21.1"
   },
   "scripts": {
